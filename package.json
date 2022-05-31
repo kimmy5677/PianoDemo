@@ -1,0 +1,23 @@
+{
+  "name": "pianosite",
+  "version": "1.0.0",
+  "description": "Piano site ecommerce or marketplace",
+  "main": "apiserver.js",
+  "scripts": {
+    "start": "node back/apiserver.js",
+    "server": "nodemon back/apiserver.js"
+  },
+  "author": "Kim",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
