@@ -1,13 +1,12 @@
 const express = require('express')
 const router = express.Router()
-const {getContactMsg,postContactMsg,putContactMsg,deleteContactMsg} = require('../controllers/contactMessageControllers')
+const {getContactMsg,postContactMsg,deleteContactMsg} = require('../controllers/contactMessageControllers')
+const {protected} = require('../middleWare/protectMiddleware')
 
-router.get('/',getContactMsg)
+router.get('/',protected, getContactMsg)
 
 router.post('/',postContactMsg)
 
-router.put('/:id',putContactMsg)
-
-router.delete('/:id',deleteContactMsg)
+router.delete('/:id',protected,deleteContactMsg)
 
 module.exports = router

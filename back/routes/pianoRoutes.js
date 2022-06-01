@@ -1,14 +1,17 @@
 //Routes for the piano api
 const express = require('express');
 const router = express.Router();
-const {getPianos,postPianos,putPianos,deletePianos} = require('../controllers/pianoControllers')
+const {getListingsAll,createListing,getListingforUser,updateListing,deleteListing} = require('../controllers/pianoControllers')
+const {protected} = require('../middleWare/protectMiddleware')
 
-router.get('/',getPianos)
+router.get('/',getListingsAll)
 
-router.post('/', postPianos)
+router.get('/user', protected, getListingforUser)
 
-router.put('/:id',putPianos)
+router.post('/newListing', protected, createListing)
 
-router.delete('/:id',deletePianos)
+router.put('/:id', protected, updateListing)
+
+router.delete('/:id', protected, deleteListing)
 
 module.exports = router
