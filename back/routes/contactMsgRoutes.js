@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const {getContactMsg,postContactMsg,deleteContactMsg} = require('../controllers/contactMessageControllers')
-const {protected} = require('../middleWare/protectMiddleware')
+const {protected} = require('../middleWare/protectRoute')
 
 router.get('/',protected, getContactMsg)
 

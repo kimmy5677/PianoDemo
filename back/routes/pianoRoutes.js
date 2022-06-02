@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const {getListingsAll,createListing,getListingforUser,updateListing,deleteListing} = require('../controllers/pianoControllers')
-const {protected} = require('../middleWare/protectMiddleware')
+const {protected} = require('../middleWare/protectRoute')
 
 router.get('/',getListingsAll)
 
